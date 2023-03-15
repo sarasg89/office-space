@@ -34,7 +34,7 @@ Run npm install to retrieve dependencies:
 
 Open your terminal and navigate to the directory
 
->`cd ./the-burlington-note-factory`
+>`cd ./office-space`
 
 Run node to initialize the application
 
@@ -45,6 +45,8 @@ Run node to initialize the application
 ## Deployment
 
 ## Credits
+
+I followed [this tutorial](https://pencilprogrammer.com/self-referencing-foreign-key-in-mysql/) on how to create a self-referencing foreign key in MySQL.
 
 NPM packages used:
 
