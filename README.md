@@ -1,7 +1,10 @@
-#
+# Employee Database Manager
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
+
+This is a command-line application that manages a company's employee database, using Node.js, Inquirer, and MySQL.
 
 ## Table of Contents
 
@@ -13,7 +16,29 @@
 
 ## Installation
 
+Ensure that you have Node.js installed, v16 is best. You can follow this guide for installation instructions.
+
+Clone this repository:
+
+>`git clone git@github.com:sarasg89/office-space.git`
+
+Navigate into the directory where you cloned this repository:
+
+>`cd ./office-space`
+
+Run npm install to retrieve dependencies:
+
+>`npm install`
+
 ## Usage
+
+Open your terminal and navigate to the directory
+
+>`cd ./the-burlington-note-factory`
+
+Run node to initialize the application
+
+>`npm start`
 
 ### Screenshots
 
@@ -21,7 +46,11 @@
 
 ## Credits
 
-Reset CSS found in Eric A. Meyer's [site](https://meyerweb.com/eric/tools/css/reset/)
+NPM packages used:
+
+- [inquirer.js](https://www.npmjs.com/package/inquirer)
+- [console.table](https://www.npmjs.com/package/console.table)
+- [mysql2](https://www.npmjs.com/package/mysql2)
 
 ## License
 

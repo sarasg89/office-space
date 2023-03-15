@@ -1,0 +1,33 @@
+{
+  "name": "office-space",
+  "version": "1.0.0",
+  "description": "CLI application to manage a company's employee database",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarasg89/office-space.git"
+  },
+  "keywords": [
+    "cli",
+    "inquirer",
+    "mysql",
+    "database"
+  ],
+  "author": "Sara Seoane Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sarasg89/office-space/issues"
+  },
+  "homepage": "https://github.com/sarasg89/office-space#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.2.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
