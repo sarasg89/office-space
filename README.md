@@ -20,29 +20,53 @@ Ensure that you have Node.js installed, v16 is best. You can follow this guide f
 
 Clone this repository:
 
->`git clone git@github.com:sarasg89/office-space.git`
+```bash
+git clone git@github.com:sarasg89/office-space.git
+```
 
 Navigate into the directory where you cloned this repository:
 
->`cd ./office-space`
+```bash
+cd ./office-space
+```
 
 Run npm install to retrieve dependencies:
 
->`npm install`
+```bash
+npm install
+```
+
+Create a .env file in the root directory and add your MySQL password using this format:
+
+```bash
+DB_NAME='mycompany_db'
+DB_PASSWORD=''
+DB_USER='root'
+```
+
+Create the database and tables using the schema.sql file and populate the tables with the seeds.sql file:
+
+```bash
+mysql -u root -p 
+mysql> source ./db/schema.sql
+mysql> source ./db/seeds.sql
+```
 
 ## Usage
 
 Open your terminal and navigate to the directory
 
->`cd ./office-space`
+```bash
+cd ./office-space
+```
 
 Run node to initialize the application
 
->`npm start`
+```bash
+node index.js
+```
 
 ### Screenshots
-
-## Deployment
 
 ## Credits
 
