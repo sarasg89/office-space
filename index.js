@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
 
+
+
 // Array of actions available to the user
 const actions = [
     "Add employee",
