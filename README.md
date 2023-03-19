@@ -48,6 +48,8 @@ Run node to initialize the application
 
 I followed [this tutorial](https://pencilprogrammer.com/self-referencing-foreign-key-in-mysql/) on how to create a self-referencing foreign key in MySQL.
 
+I used this [ASCII generator](https://patorjk.com/software/taag/#p=display&h=1&v=1&f=Banner&t=Employee%20%0AManager) to create the ASCII art for the app.
+
 NPM packages used:
 
 - [inquirer.js](https://www.npmjs.com/package/inquirer)

@@ -34,8 +34,30 @@ const updateRole = [
     "Which role do you want to assign the selected employee?"
 ]
 
+function printApp() {
+    console.log(`       
+    #######                                                    
+    #       #    # #####  #       ####  #   # ###### ######    
+    #       ##  ## #    # #      #    #  # #  #      #         
+    #####   # ## # #    # #      #    #   #   #####  #####     
+    #       #    # #####  #      #    #   #   #      #         
+    #       #    # #      #      #    #   #   #      #         
+    ####### #    # #      ######  ####    #   ###### ######    
+    #     #                                                    
+    ##   ##   ##   #    #   ##    ####  ###### #####           
+    # # # #  #  #  ##   #  #  #  #    # #      #    #          
+    #  #  # #    # # #  # #    # #      #####  #    #          
+    #     # ###### #  # # ###### #  ### #      #####           
+    #     # #    # #   ## #    # #    # #      #   #           
+    #     # #    # #    # #    #  ####  ###### #    #             
+    `);
+}
+
+
 // Function to initialize app
 function init() {
+    printApp();
+
     inquirer
         .prompt([{
             type: "list",
