@@ -55,6 +55,8 @@ NPM packages used:
 - [inquirer.js](https://www.npmjs.com/package/inquirer)
 - [console.table](https://www.npmjs.com/package/console.table)
 - [mysql2](https://www.npmjs.com/package/mysql2)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [nodedemon](https://www.npmjs.com/package/nodemon)
 
 ## License
 

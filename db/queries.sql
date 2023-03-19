@@ -9,4 +9,5 @@ SELECT
 e.id AS id, e.first_name AS first_name, e.last_name AS last_name, role.title AS title, department.name AS department, role.salary AS salary, (SELECT CONCAT(employee.first_name," ", employee.last_name) FROM employee WHERE id = e.manager_id) AS manager
 FROM employee AS e
 JOIN role ON e.role_id = role.id
-JOIN department ON role.department_id = department.id;
+JOIN department ON role.department_id = department.id
+ORDER BY id;

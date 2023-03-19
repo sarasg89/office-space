@@ -24,10 +24,12 @@
   "homepage": "https://github.com/sarasg89/office-space#readme",
   "dependencies": {
     "console.table": "^0.10.0",
+    "dotenv": "^16.0.3",
     "inquirer": "^8.2.4",
     "mysql2": "^3.2.0"
   },
   "devDependencies": {
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.21"
   }
 }
