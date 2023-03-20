@@ -17,7 +17,7 @@ const actions = [
     "View all departments",
     "Add department",
     "Delete department",
-    "Quit"
+    "*Quit*"
 ]
 
 // Function to print "Employee Manager" to the terminal
@@ -160,7 +160,25 @@ function employeeAdd() {
 
 // Function to delete employees
 function employeeDelete() {
-
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Which employee do you want to delete?",
+                choices: listEmployees,
+                name: "employeeDeleteName"
+            },
+        ])
+        .then((data) => {
+            // Query database: delete employee by name
+            db.query(`SELECT id FROM employee WHERE first_name = "${data.employeeDeleteName.split(" ")[0]}" AND last_name = "${data.employeeDeleteName.split(" ")[1]}"`, function (err, results) {
+                employeeID = results[0].id;
+                db.query(`DELETE FROM employee WHERE id = ${employeeID}`, function () {
+                    console.log(`${data.employeeDeleteName.split(" ")[0]} ${data.employeeDeleteName.split(" ")[1]} has been deleted from the database`);
+                    init();
+                })
+            });
+        })
 }
 
 // Function to update employee's role
@@ -194,7 +212,32 @@ function employeeUpdateRole() {
 
 // Function to update employee's manager
 function employeeUpdateManager() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Which employee's manager do you want to update?",
+                choices: listEmployees,
+                name: "employeeUpdateName"
+            },
+            {
+                type: "list",
+                message: "Which new manager do you want to assign to the selected employee?",
+                choices: listEmployees,
+                name: "employeeUpdateManager"
+            }
+        ])
+        .then((data) => {
+            // Query database: select employee by name
+            db.query(`SELECT id FROM employee WHERE first_name = "${data.employeeUpdateManager.split(" ")[0]}" AND last_name = "${data.employeeUpdateManager.split(" ")[1]}"`, function (err, results) {
+                managerID = results[0].id;
 
+                // Query database: update employee table
+                db.query(`UPDATE employee SET manager_id = ${managerID} WHERE first_name = "${data.employeeUpdateName.split(" ")[0]}" AND last_name = "${data.employeeUpdateName.split(" ")[1]}"`);
+                console.log(`Manager relationship has been updated for ${data.employeeUpdateName.split(" ")[0]} ${data.employeeUpdateName.split(" ")[1]}`);
+                init();
+            });
+        })
 }
 
 // Function to display the role table
@@ -242,7 +285,25 @@ function roleAdd() {
 
 // Function to delete roles
 function roleDelete() {
-
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Which role do you want to delete?",
+                choices: listRoles,
+                name: "roleDelete"
+            },
+        ])
+        .then((data) => {
+            // Query database: delete role by name
+            db.query(`SELECT id FROM role WHERE title = "${data.roleDelete}"`, function (err, results) {
+                roleID = results[0].id;
+                db.query(`DELETE FROM role WHERE id = ${roleID}`, function () {
+                    console.log(`${data.roleDelete} has been deleted from the database`);
+                    init();
+                })
+            });
+        })
 }
 
 // Function to display the department table
@@ -274,7 +335,25 @@ function deptAdd() {
 
 // Function to delete departments
 function deptDelete() {
-
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Which department do you want to delete?",
+                choices: listDepartments,
+                name: "deptDelete"
+            },
+        ])
+        .then((data) => {
+            // Query database: delete department by name
+            db.query(`SELECT id FROM department WHERE name = "${data.deptDelete}"`, function (err, results) {
+                deptId = results[0].id;
+                db.query(`DELETE FROM department WHERE id = ${deptId}`, function () {
+                    console.log(`${data.deptDelete} has been deleted from the database`);
+                    init();
+                })
+            });
+        })
 }
 
 let listDepartments = [];
@@ -283,6 +362,7 @@ let listEmployees = ["None"];
 let roleID;
 let managerID;
 let deptId;
+let employeeID;
 
 // Function to initialize app
 function init() {
@@ -342,8 +422,8 @@ function init() {
                 deptAdd();
             } else if (data.actionsChoice === "Delete department") {
                 deptDelete();
-            } else if (data.actionsChoice === "Quit") {
-                console.log("Good bye");
+            } else if (data.actionsChoice === "*Quit*") {
+                console.log("Bye");
                 process.exit();
             }
         })
