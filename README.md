@@ -6,6 +6,22 @@
 
 This is a command-line application that manages a company's employee database, using Node.js, Inquirer, and MySQL.
 
+The user can: 
+
+- View all employees
+- View all employees by department
+- View all employees by manager
+- Add an employee
+- Remove an employee
+- Update an employee's role
+- Update an employee's manager
+- View all roles
+- Add a role
+- Remove a role
+- View all departments
+- Add a department
+- Remove a department
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -65,8 +81,19 @@ Run node to initialize the application
 ```bash
 node index.js
 ```
+[Link](https://drive.google.com/file/d/1xJbrHhxjtKRXwqPXkyb3t2JYdaPnsEzZ/view?usp=share_link) to the video walkthrough of the application.
 
 ### Screenshots
+
+![initialize mysql in terminal](./assets/images/mysql.png)
+
+![start the application in terminal](./assets/images/start.png)
+
+![example of viewing employees](./assets/images/view%20employees.png)
+
+![example of adding and deleting an employee](./assets/images/add%20delete%20employee.png)
+
+![example of updating an employee](./assets/images/update%20employee.png)
 
 ## Credits
 
