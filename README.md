@@ -81,6 +81,14 @@ Run node to initialize the application
 ```bash
 node index.js
 ```
+
+
+
+https://user-images.githubusercontent.com/118869836/226227063-85dd496c-91f6-4864-aedb-9d1fba5d9531.mp4
+
+
+
+
 [Link](https://drive.google.com/file/d/1xJbrHhxjtKRXwqPXkyb3t2JYdaPnsEzZ/view?usp=share_link) to the video walkthrough of the application.
 
 ### Screenshots
