@@ -204,9 +204,10 @@ function employeeUpdateRole() {
             db.query(`SELECT id FROM role WHERE title = "${data.employeeUpdateRole}"`, function (err, results) {
                 roleID = results[0].id;
                 // Query database: update employee table
-                db.query(`UPDATE employee SET role_id = ${roleID} WHERE first_name = "${data.employeeUpdateName.split(" ")[0]}" AND last_name = "${data.employeeUpdateName.split(" ")[1]}"`)
+                db.query(`UPDATE employee SET role_id = ${roleID} WHERE first_name = "${data.employeeUpdateName.split(" ")[0]}" AND last_name = "${data.employeeUpdateName.split(" ")[1]}"`);
+                console.log(`The role for ${data.employeeUpdateName.split(" ")[0]} ${data.employeeUpdateName.split(" ")[1]} has been updated`);
+                init();
             })
-            init();
         })
 }
 
@@ -368,6 +369,7 @@ let employeeID;
 function init() {
     // Query database to list all existing departments
     db.query('SELECT name FROM department', function (err, results) {
+        listDepartments = [];
         results.forEach(element => {
             listDepartments.push(element.name);
         });
@@ -375,6 +377,7 @@ function init() {
 
     // Query database to list all existing roles
     db.query('SELECT title FROM role', function (err, results) {
+        listRoles = [];
         results.forEach(element => {
             listRoles.push(element.title);
         })
@@ -382,6 +385,7 @@ function init() {
 
     // Query database to list all existing employees
     db.query('SELECT first_name, last_name FROM employee', function (err, results) {
+        listEmployees = ["None"];
         results.forEach(element => {
             listEmployees.push(`${element.first_name} ${element.last_name}`);
         })
